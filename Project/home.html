@@ -8,6 +8,12 @@
     <script src="script.js"></script>
    </head>
 
+   <nav class="contianer">
+      <a href="index.html">Home</a>
+      <a href="home.html">Information</a>
+      <a href="analysis.html">Analysis</a>
+    </nav>
+    
   <body onload="init()">
     <div id="banner" class="container center">
       <div style="text-align:center">
@@ -17,15 +23,11 @@
     </div>
 
        
-   <nav class="contianer">
-      <a href="index.html">Home</a>
-      <a href="home.html">Information</a>
-      <a href="analysis.html">Analysis</a>
-    </nav>
+
     <div class="container subbanner">
       <div>
         <p>This practical challenges students to provide various ways to filter  
-          Motor Vehicle Collisions - Crashes.</p>
+         The Open Restaurants at the boroughs and in the neighorhood.</p>
         <a class="button" href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data</a> 
         <a class="button" target="_blank" href="https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data
 "> Motor-Vehicle-Collisions-Crashes Request</a>
@@ -37,34 +39,39 @@
       <div id="leftPanel">
         <!--Card below is the basic HTML to use for Challenge 1 and 3 -->
         <div class="card">
-          <h3>SEARCH By Model</h3>
-          <input type="text" id="model" placeholder="Enter Car model">
+          <h3>SEARCH By Borough</h3>
+          <input type="text" id="borough" placeholder="Enter borough">
           <hr>
-          <a class="button" onclick="filterByModel()"> Search </a>
+          <a class="button" onclick="filterByBorough()"> Search </a>
         </div>
         <!--Challenge 1: Create another UI in order to filter by zip code. [See Challenge 2 in script.js] -->
  <div class="card">
-          <h3>SEARCH By People injured</h3>
-          <input type="text" id="injured" placeholder="Enter number of injured">
+          <h3>SEARCH By Post Code</h3>
+          <input type="text" id="post" placeholder="Enter psotcode">
           <hr>
-          <a class="button" onclick="filterByInjured()"> Search </a>
+          <a class="button" onclick="filterByPost()"> Search </a>
         </div>
 
         <!--Challenge 3: Create another UI in order to filter by complaint type. [See Challenge 4 in script.js] -->
  <div class="card">
-          <h3>SEARCH By Crash Date</h3>
+          <h3>SEARCH By Seating Choice</h3>
           <input type="text" id="date" placeholder="Enter Date">
           <hr>
-          <a class="button" onclick="filterByDate()"> Search </a>
+          <a class="button" onclick="filterByseating()"> Search </a>
         </div>
 
-
 <div class="card">
-          <h3>SEARCH By Model and People injured</h3>
+  <h3>SEARCH by Is Roadway Compliant </h3>
+  <input type="text" id="compliant" placeholder="Enter Compliant">
+  <hr>
+  <a class="button" onclick="filterBycompliant()">Search</a>
+</div>
+<div class="card">
+          <h3>SEARCH By Borough and Seating Choice </h3>
           <input type="text" id="model" placeholder="Enter Model ">
           <input type="text" id="injured" placeholder="Enter People injured">
           <hr>
-          <a class="button" onclick="filterByMP()"> Search </a>
+          <a class="button" onclick="filterByBS()"> Search </a>
         </div>
       </div>
 
@@ -77,7 +84,7 @@
     </div>
 
     <div id="footer" class="container center">
-      <h3>Lesson 6.7 Practical</h3>
+      <h3>NYC OPEN DATA PROJECT </h3>
     </div>  
   </body>
 </html>

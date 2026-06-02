@@ -31,6 +31,10 @@ nav a:hover{
   background-color:blue;
   color:white;
 }
+.picture{
+  text-align: left;
+  flex: 1;
+}
 #footer{
   background-color:cornflowerblue;
   color:white;

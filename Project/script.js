@@ -13,9 +13,9 @@ async function init(){
     build += `<div class="fitted card">
                 <h3>${car.on_street_name}</h3>
                  <hr>
-                 <p># Date: ${car.crash_date}</p>
-                 <p># Time: ${car.crash_time}</p>
-                 <p># Injured: ${car.number_of_persons_injured}</p>
+                 <p># Borough: ${car.borough}</p>
+                 <p># Post Code: ${car.postcode}</p>
+                 <p># Seating Choice: ${car.seatingchoice}</p>
                  <hr>
                  <p># Contributing factor: ${car.contributing_factor_vehicle_1}</p>
                  <hr>
@@ -26,9 +26,9 @@ async function init(){
 }
 
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
-function filterByModel(){
+function filterByborough(){
   let output = document.getElementById("output");
-  let mod = document.getElementById("model").value;
+  let bor = document.getElementById("borough").value;
   let result = document.getElementById("result");
   
   let build = "";
@@ -36,11 +36,11 @@ function filterByModel(){
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
-    if(car.vehicle_type_code1 == mod){
+    if(borough == bor){
       build += `<div class="fitted card">
-                <h3>${car.on_street_name}</h3>
+                <h3>${borough}</h3>
                  <hr>
-                 <p># Date: ${car.crash_date}</p>
+                 <p># borough: ${car.crash_date}</p>
                  <p># Time: ${car.crash_time}</p>
                  <p># Injured: ${car.number_of_persons_injured}</p>
                  <hr>
@@ -58,7 +58,7 @@ function filterByModel(){
 // Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
 function filterByInjured(){
   let output = document.getElementById("output");
-  let inj = document.getElementById("injured").value;
+  let inj = document.getElementById("post").value;
   let result = document.getElementById("result");
   
   let build = "";
@@ -70,7 +70,7 @@ function filterByInjured(){
      build += `<div class="fitted card">
                 <h3>${car.on_street_name}</h3>
                  <hr>
-                 <p># Date: ${car.crash_date}</p>
+                 <p># borough: ${car.crash_date}</p>
                  <p># Time: ${car.crash_time}</p>
                  <p># Injured: ${car.number_of_persons_injured}</p>
                  <hr>
