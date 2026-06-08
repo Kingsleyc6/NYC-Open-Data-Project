@@ -8,6 +8,7 @@
     <script src="script.js"></script>
    </head>
 
+   
   <body onload="init()">
     <div id="banner" class="container center">
       <div style="text-align:center">
@@ -15,11 +16,68 @@
           <h2>Filtering Restaurants</h2>
       </div>
     </div>
-
-
-    <nav class="contianer">
+   <nav class="contianer">
       <a href="index.html">Home</a>
-      <a href="home.html">Information</a>
+      <a href="info.html">Information</a>
       <a href="analysis.html">Analysis</a>
     </nav>
+       
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <title>7.3 Prac Charts(collisions)</title>
+    <!-- Import libraries and link files  -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="c3.css" rel="stylesheet" type="text/css" />
+    <script src="c3.js"></script>
+    <script src="d3.js"></script>
+    <script src="helper.js"></script>  
+    <script src="script.js"></script>
+   </head>
+
+
+
+
+      <div id="panel">
+        
+        <div class="card">
+          <h3>Select Chart Type</h3>
+          <select id="chartType" style="width:100px;">
+            <option value="bar">Bar</option>
+            <option value="pie">Pie</option>
+          </select>
+        </div>
+        
+        <div class="card">
+          <h3>Accidents by Borough</h3>
+          <p><span class="highlight">Scenario:</span> Aggregate the number of accidents by borough and create a chart to analyze the results.</p>
+          <a class="button" onclick="restaurantByBorough()"> Show Chart </a>
+        </div>
+        
+        <div class="card">
+          <h3>Accidents by seatingchoice</h3>
+          <p><span class="highlight">Scenario:</span> Aggregate the number of restaurants by seating choice and create a chart to analyze the results.</p>
+          <a class="button" onclick="restaurantByseat()"> Show Chart </a>
+        </div>
+      </div>
+      
+      <div class="card">
+       <div id="chart"></div> <!-- div for chart -->
+      </div>
+    </div>
+
+    <div id="footer" class="container center">
+      <h3>Lesson 7.3 Prac Charts(Collisions)</h3>
+    </div>  
+  </body>
+</html>
     

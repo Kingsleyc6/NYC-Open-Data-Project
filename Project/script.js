@@ -11,22 +11,23 @@ async function init(){
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
     build += `<div class="fitted card">
-                <h3>${car.on_street_name}</h3>
+                <h3>${car.restaurantname}</h3>
                  <hr>
                  <p># Borough: ${car.borough}</p>
+                 <p># Address: ${car.businessaddress}</p>
                  <p># Post Code: ${car.postcode}</p>
                  <p># Seating Choice: ${car.seatingchoice}</p>
                  <hr>
-                 <p># Contributing factor: ${car.contributing_factor_vehicle_1}</p>
+                 <p># Compliant: ${car.isroadwaycompliant}</p>
                  <hr>
-                 <p># Vehicle Type: ${car.vehicle_type_code1}</p>
+              
               </div>`    
   }
   output.innerHTML = build;
 }
 
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
-function filterByborough(){
+function filterByBorough(){
   let output = document.getElementById("output");
   let bor = document.getElementById("borough").value;
   let result = document.getElementById("result");
@@ -36,17 +37,18 @@ function filterByborough(){
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
-    if(borough == bor){
-      build += `<div class="fitted card">
-                <h3>${borough}</h3>
+    if(car.borough == bor){
+        build += `<div class="fitted card">
+                <h3>${car.restaurantname}</h3>
                  <hr>
-                 <p># borough: ${car.crash_date}</p>
-                 <p># Time: ${car.crash_time}</p>
-                 <p># Injured: ${car.number_of_persons_injured}</p>
+                 <p># Borough: ${car.borough}</p>
+                 <p># Address: ${car.businessaddress}</p>
+                 <p># Post Code: ${car.postcode}</p>
+                 <p># Seating Choice: ${car.seatingchoice}</p>
                  <hr>
-                 <p># Contributing factor: ${car.contributing_factor_vehicle_1}</p>
+                 <p># Compliant: ${car.isroadwaycompliant}</p>
                  <hr>
-                 <p># Vehicle Type: ${car.vehicle_type_code1}</p>
+                
               </div>`;
       ct += 1;
     }
@@ -56,9 +58,9 @@ function filterByborough(){
 }
 
 // Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
-function filterByInjured(){
+function filterByPost(){
   let output = document.getElementById("output");
-  let inj = document.getElementById("post").value;
+  let post = document.getElementById("post").value;
   let result = document.getElementById("result");
   
   let build = "";
@@ -66,17 +68,17 @@ function filterByInjured(){
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
-    if(car.number_of_persons_injured == inj){
-     build += `<div class="fitted card">
-                <h3>${car.on_street_name}</h3>
+    if(car.postcode == post){
+ build += `<div class="fitted card">
+                <h3>${car.restaurantname}</h3>
                  <hr>
-                 <p># borough: ${car.crash_date}</p>
-                 <p># Time: ${car.crash_time}</p>
-                 <p># Injured: ${car.number_of_persons_injured}</p>
+                 <p># Borough: ${car.borough}</p>
+                 <p># Address: ${car.businessaddress}</p>
+                 <p># Post Code: ${car.postcode}</p>
+                 <p># Seating Choice: ${car.seatingchoice}</p>
                  <hr>
-                 <p># Contributing factor: ${car.contributing_factor_vehicle_1}</p>
+                 <p># Compliant: ${car.isroadwaycompliant}</p>
                  <hr>
-                 <p># Vehicle Type: ${car.vehicle_type_code1}</p>
               </div>`;
       ct += 1;
     }
@@ -85,9 +87,9 @@ function filterByInjured(){
   output.innerHTML = build;
 }
 // Challenge 4: Create an event handler (function) to filter the 311 Service Request by complaint type.
-function filterByDate(){
+function filterByseating(){
   let output = document.getElementById("output");
-  let date = document.getElementById("date").value;
+  let Seating = document.getElementById("seat").value;
   let result = document.getElementById("result");
   
   let build = "";
@@ -95,17 +97,17 @@ function filterByDate(){
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
-    if(car.crash_date == date){
+    if(car.seatingchoice == Seating){
      build += `<div class="fitted card">
-                <h3>${car.on_street_name}</h3>
+                <h3>${car.restaurantname}</h3>
                  <hr>
-                 <p># Date: ${car.crash_date}</p>
-                 <p># Time: ${car.crash_time}</p>
-                 <p># Injured: ${car.number_of_persons_injured}</p>
+                 <p># Borough: ${car.borough}</p>
+                 <p># Address: ${car.businessaddress}</p>
+                 <p># Post Code: ${car.postcode}</p>
+                 <p># Seating Choice: ${car.seatingchoice}</p>
                  <hr>
-                 <p># Contributing factor: ${car.contributing_factor_vehicle_1}</p>
+                 <p># Compliant: ${car.isroadwaycompliant}</p>
                  <hr>
-                 <p># Vehicle Type: ${car.vehicle_type_code1}</p>
               </div>`;
       ct += 1;
     }
@@ -114,11 +116,41 @@ function filterByDate(){
   output.innerHTML = build;
 }
 
-//============================================================================================================================================================
-function filterByMP(){
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+function filterBycompliant(){
   let output = document.getElementById("output");
-  let model = document.getElementById("model").value;
-  let injured = document.getElementById("injured").value;
+  let com = document.getElementById("compliant").value;
+  let result = document.getElementById("result");
+  
+  let build = "";
+  let ct = 0;
+
+  for(let i = 0; i < data.length; i+=1){
+    let car = data[i];
+    if(car.isroadwaycompliant == com){
+     build += `<div class="fitted card">
+                <h3>${car.restaurantname}</h3>
+                 <hr>
+                 <p># Borough: ${car.borough}</p>
+                 <p># Address: ${car.businessaddress}</p>
+                 <p># Post Code: ${car.postcode}</p>
+                 <p># Seating Choice: ${car.seatingchoice}</p>
+                 <hr>
+                 <p># Compliant: ${car.isroadwaycompliant}</p>
+                 <hr>
+              </div>`;
+      ct += 1;
+    }
+  }
+  result.innerHTML = `${ct} Results found.`
+  output.innerHTML = build;
+}
+//============================================================================================================================================================
+function filterByBS(){
+  let output = document.getElementById("output");
+  let bor = document.getElementById("borough").value;
+  let Seating = document.getElementById("seat").value;
   let result = document.getElementById("result");
   console.log("Model" + model);
   
@@ -127,17 +159,17 @@ function filterByMP(){
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
-    if(car.vehicle_type_code1 == model && car.number_of_persons_injured == injured){
+    if(car.borough == bor && car.seatingchoice == Seating){
      build += `<div class="fitted card">
-                <h3>${car.on_street_name}</h3>
+                <h3>${car.restaurantname}</h3>
                  <hr>
-                 <p># Date: ${car.crash_date}</p>
-                 <p># Time: ${car.crash_time}</p>
-                 <p># Injured: ${car.number_of_persons_injured}</p>
+                 <p># Borough: ${car.borough}</p>
+                 <p># Address: ${car.businessaddress}</p>
+                 <p># Post Code: ${car.postcode}</p>
+                 <p># Seating Choice: ${car.seatingchoice}</p>
                  <hr>
-                 <p># Contributing factor: ${car.contributing_factor_vehicle_1}</p>
+                 <p># Compliant: ${car.isroadwaycompliant}</p>
                  <hr>
-                 <p># Vehicle Type: ${car.vehicle_type_code1}</p>
               </div>`;
       ct += 1;
     }
@@ -145,4 +177,5 @@ function filterByMP(){
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
+
 

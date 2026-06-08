@@ -1,10 +1,11 @@
 html,body{
   margin:0 auto;
-  font-family:Arial;
+  font-family: 'Times New Roman', Times, serif;
 }
 .container{
-  display:flex;
+ display: flex;
   padding:10px;
+  background-color: gainsboro;
 }
 .center{
   justify-content:center;
@@ -25,7 +26,7 @@ nav a:hover{
   color:white;
 }
 .subbanner{
-  background-color:cornflowerblue;
+  background-color:rgb(100, 237, 157);
 }
 #banner{
   background-color:blue;
@@ -77,6 +78,9 @@ nav a:hover{
   width:150px;
   height:150px;
   object-fit:contain;
+}
+#contianer{
+  flex: 1;
 }
 
 #leftPanel{
