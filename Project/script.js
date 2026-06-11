@@ -1,12 +1,16 @@
-let data, info;
+//Data Source: https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95
+//global variables
+let data, info, output;
 
-async function init(){   
+
+async function init(){  
   let link = "ori.json"; //let link = "https://data.cityofnewyork.us/Transportation/Open-Restaurants-Inspections/4dx7-axux/about_data";
   info = await fetch(link);
   data = await info.json();
-  
+ 
   let output = document.getElementById("output");
   let build = "";
+
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
@@ -20,20 +24,22 @@ async function init(){
                  <hr>
                  <p># Compliant: ${car.isroadwaycompliant}</p>
                  <hr>
-              
+             
               </div>`    
   }
   output.innerHTML = build;
 }
+
 
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
 function filterByBorough(){
   let output = document.getElementById("output");
   let bor = document.getElementById("borough").value;
   let result = document.getElementById("result");
-  
+ 
   let build = "";
   let ct = 0;
+
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
@@ -48,7 +54,7 @@ function filterByBorough(){
                  <hr>
                  <p># Compliant: ${car.isroadwaycompliant}</p>
                  <hr>
-                
+               
               </div>`;
       ct += 1;
     }
@@ -57,14 +63,16 @@ function filterByBorough(){
   output.innerHTML = build;
 }
 
+
 // Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
 function filterByPost(){
   let output = document.getElementById("output");
   let post = document.getElementById("post").value;
   let result = document.getElementById("result");
-  
+ 
   let build = "";
   let ct = 0;
+
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
@@ -91,9 +99,10 @@ function filterByseating(){
   let output = document.getElementById("output");
   let Seating = document.getElementById("seat").value;
   let result = document.getElementById("result");
-  
+ 
   let build = "";
   let ct = 0;
+
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
@@ -116,15 +125,18 @@ function filterByseating(){
   output.innerHTML = build;
 }
 
+
 //---------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 function filterBycompliant(){
   let output = document.getElementById("output");
   let com = document.getElementById("compliant").value;
   let result = document.getElementById("result");
-  
+ 
   let build = "";
   let ct = 0;
+
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
@@ -153,9 +165,10 @@ function filterByBS(){
   let Seating = document.getElementById("seat").value;
   let result = document.getElementById("result");
   console.log("Model" + model);
-  
+ 
   let build = "";
   let ct = 0;
+
 
   for(let i = 0; i < data.length; i+=1){
     let car = data[i];
@@ -177,5 +190,3 @@ function filterByBS(){
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
-
-

@@ -1,11 +1,10 @@
 html,body{
   margin:0 auto;
-  font-family: 'Times New Roman', Times, serif;
+  font-family:Arial;
 }
 .container{
- display: flex;
+  display:flex;
   padding:10px;
-  background-color: gainsboro;
 }
 .center{
   justify-content:center;
@@ -13,7 +12,7 @@ html,body{
 }
 
 nav{
-  background-color:cornflowerblue;
+  background-color:rgb(255, 0, 0);
 }
 nav a{
   color:black;
@@ -26,18 +25,14 @@ nav a:hover{
   color:white;
 }
 .subbanner{
-  background-color:rgb(100, 237, 157);
+  background-color:rgb(200,225,255);
 }
 #banner{
-  background-color:blue;
+  background-color:rgb(30, 11, 11);
   color:white;
 }
-.picture{
-  text-align: left;
-  flex: 1;
-}
 #footer{
-  background-color:cornflowerblue;
+  background-color:rgb(237, 100, 100);
   color:white;
   /*position:fixed;*/
   left: 0;
@@ -55,14 +50,14 @@ nav a:hover{
 
 .highlight{
   font-style:italic;
-  color:blue;
+  color:rgb(255, 0, 0);
 }
 .heading{
   font-weight:bold;
 }
 .button{
   text-decoration:none;
-  background-color:blue;
+  background-color:rgb(255, 0, 0);
   color:white;
   border-radius:4px;
   padding:6px;
@@ -71,31 +66,56 @@ nav a:hover{
 .button:hover{
   background-color:cornflowerblue;
 }
+#panel{
+  flex:1;
+}
+.flash{
+  max-width:200px;
+}
+.card img{
+  height:100px;
+}
 #output{
   flex-wrap:wrap;
 }
-.fit{
-  width:150px;
-  height:150px;
-  object-fit:contain;
+html,body{
+  margin:0 auto;
+  font-family:Arial;
 }
-#contianer{
-  flex: 1;
+.container{
+ display: flex;
+  padding:10px;
+}
+.center{
+  justify-content:center;
+  align-items:center;
 }
 
-#leftPanel{
+
+nav{
+  background-color:rgb(237, 189, 100);
+}
+nav a{
+  color:black;
+  padding:10px;
   flex:1;
+  text-decoration:none;
+  text-align:center;
 }
-#rightPanel{
-  flex:2;
+nav a:hover{
+  color:white;
 }
-.fitted{
-  max-width:200px;
-  min-width:200px;
+.subbanner{
+  background-color:rgb(199, 203, 55);
 }
-#result{
-  background-color: yellow;
-  color:red;
-  max-width: 200px;
-  font-size: 20px;
+#banner{
+  background-color:rgb(127, 134, 0);
+  color:white;
 }
+.picture{
+  text-align: left;
+  flex: 1;
+}
+#footer{
+  background-color:cornflowerblue;
+  color:white; }
